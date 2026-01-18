@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.skuska.DetailController"
+      spacing="8">
+
+    <padding>
+        <Insets top="8" right="8" bottom="8" left="8"/>
+    </padding>
+
+    <Label text="Detail rezervácie" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+
+    <GridPane hgap="8" vgap="4">
+        <Label text="Zodpovedná osoba:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="lblResponsible" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-font-weight: bold;"/>
+
+        <Label text="Počet hostí:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="lblGuestCount" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Cena izby:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="lblRoomPrice" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Cena služieb:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="lblServicesPrice" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="CELKOVÁ CENA:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblTotalPrice" GridPane.rowIndex="4" GridPane.columnIndex="1" style="-fx-font-weight: bold; -fx-font-size: 13px;"/>
+    </GridPane>
+
+    <Separator />
+
+    <Label text="Služby:" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="tableServices" prefHeight="180">
+        <columns>
+            <TableColumn fx:id="colServiceName" text="Služba" prefWidth="180"/>
+            <TableColumn fx:id="colServicePrice" text="Cena (€)" prefWidth="80"/>
+            <TableColumn fx:id="colServiceQuantity" text="Počet" prefWidth="60"/>
+        </columns>
+    </TableView>
+
+    <Button text="Zatvoriť" onAction="#handleClose" maxWidth="100" style="-fx-font-size: 11px;"/>
+</VBox>
